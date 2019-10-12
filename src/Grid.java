@@ -43,6 +43,11 @@ public class Grid {
         return new int[]{-1,-1};
     }
 
+    public boolean isGoalState(String[][] grid){
+        if (grid[1][1].equals("A")&&grid[2][1].equals("B")&&grid[3][1].equals("C")) return true;
+        return false;
+    }
+
     public void printGrid(String[][] grid) {
         System.out.println(getElementPosition(testState,actor));
         for (int row = 0; row <= 3; row++) {
