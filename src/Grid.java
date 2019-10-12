@@ -40,7 +40,7 @@ public class Grid {
                 if (grid[i][j].equals(searchElement)) return new int[]{i, j};
             }
         }
-        return new int[]{-1,-1};
+        return null;
     }
 
     public boolean isGoalState(String[][] grid){
