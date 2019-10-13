@@ -3,27 +3,36 @@ import java.util.Arrays;
 
 public class Grid {
 
-    public Grid(){
-
-    }
-    private String actor = "ʕ•ᴥ•ʔ";
-    private String[][] startState = {{"#","#","#","#"},{"#","#","#","#"},{"#","#","#","#"},{"A","B","C",actor}};
-    private String[][] goalState = {{"#","#","#","#"},{"#","A","#","#"},{"#","B","#","#"},{"#","C","#",actor}};
-    private String[][] testState =  {
-                                    {"#","#","#","#"},
-                                    {"#","A","#","#"},
-                                    {"#","B","#",actor},
-                                    {"#","C","#","#"}
-                                    };
-
-    public String[][] getStartState(){
-        return startState;
-    }
-    public String[][] getGoalState(){
-        return goalState;
+    public Grid parent;
+    public ArrayList<Grid> children;
+    public String[][] grid;
+    public String actor;
+    public Grid(String[][] grid, String actor){
+        this.parent = null;
+        this.children = new ArrayList<>();
+        this.grid = grid;
+        this.actor = actor;
     }
 
-    public ArrayList<String> getAllowedMovement(int[] position){
+    public String[][] getNewGrid(){
+        String [][] newGrid = new String[4][4];
+        for (int i = 0; i<4; i++){
+            for (int j = 0; j<4;j++){
+                newGrid[i][j] = grid[i][j];
+            }
+        }
+        return newGrid;
+    }
+
+    public void swapPositions(int[] newPosition){
+        int[] actorPosition = this.getElementPosition(actor);
+        String element = this.grid[newPosition[0]][newPosition[1]];
+        this.grid[actorPosition[0]][actorPosition[1]] = element;
+        this.grid[newPosition[0]][newPosition[1]] = actor;
+    }
+
+    public ArrayList<String> getActorAllowedMovement(){
+        int[] position = getElementPosition(actor);
         ArrayList<String> allowedMovements = new ArrayList<>(Arrays.asList("left","right","up","down"));
         int row = position[0];
         int col = position[1];
@@ -34,7 +43,17 @@ public class Grid {
         return allowedMovements;
     }
     // returns an array with the position of the searched element
-    private int[] getElementPosition(String [][] grid, String searchElement){
+
+    public int[] getActorPosition(){
+        for (int i = 0; i<4; i++){
+            for (int j = 0; j<4;j++){
+                if (grid[i][j].equals(actor)) return new int[]{i, j};
+            }
+        }
+        return null;
+    }
+
+    private int[] getElementPosition(String searchElement){
         for (int i = 0; i<4; i++){
             for (int j = 0; j<4;j++){
                 if (grid[i][j].equals(searchElement)) return new int[]{i, j};
@@ -43,13 +62,7 @@ public class Grid {
         return null;
     }
 
-    public boolean isGoalState(String[][] grid){
-        if (grid[1][1].equals("A")&&grid[2][1].equals("B")&&grid[3][1].equals("C")) return true;
-        return false;
-    }
-
-    public void printGrid(String[][] grid) {
-        System.out.println(getElementPosition(testState,actor));
+    public void printGrid() {
         for (int row = 0; row <= 3; row++) {
             for (int col = 0; col <= 3; col++) {
                 System.out.print(grid[row][col]+" ");
