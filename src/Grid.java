@@ -4,14 +4,16 @@ import java.util.Arrays;
 public class Grid {
 
     public Grid parent;
-    public ArrayList<Grid> children;
     public String[][] grid;
     public String actor;
+    public int depth;
+    public String move;
     public Grid(String[][] grid, String actor){
         this.parent = null;
-        this.children = new ArrayList<>();
         this.grid = grid;
         this.actor = actor;
+        depth = 0;
+        move = "";
     }
 
     public String[][] getNewGrid(){
