@@ -1,0 +1,34 @@
+3753 total number of nodes expanded //if checked for duplicates BFS
+11304 total number of nodes generated //if checked for duplicates BFS
+Solution depth at 14
+7316881 total number of nodes expanded //BFS no check
+23677912 total number of nodes generated //BFS no check
+Solution depth at 14
+=========================================================================
+120117.47524752475 Average value for nodes generated
+37938.53465346534 Average value for depth
+Smallest value for nodes generated 283
+Biggest value for nodes generated 754058
+Smallest value for depth 93
+Biggest value depth 238167
+
+120069.08910891089 Average value for nodes generated
+37916.0099009901 Average value for depth
+Smallest value for nodes generated 1049
+Biggest value for nodes generated 573516
+Smallest value for depth 339
+Biggest value depth 181113
+
+109913.74257425743 Average value for nodes generated
+34710.72277227723 Average value for depth
+Smallest value for nodes generated 128
+Biggest value for nodes generated 535804
+Smallest value for depth 38
+Biggest value depth 168959
+
+5271986.881188119 Average value for nodes generated
+37804.16831683168 Average value for depth
+Smallest value for nodes generated 9697
+Biggest value for nodes generated 12087047
+Smallest value for depth 1345
+Biggest value depth 251452

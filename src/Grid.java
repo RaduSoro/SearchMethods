@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Random;
 
 public class Grid {
 
@@ -8,12 +10,14 @@ public class Grid {
     public String actor;
     public int depth;
     public String move;
+    public ArrayList<Grid> children;
     public Grid(String[][] grid, String actor){
         this.parent = null;
         this.grid = grid;
         this.actor = actor;
         depth = 0;
         move = "";
+        children = new ArrayList<>();
     }
 
     public String[][] getNewGrid(){
@@ -44,7 +48,35 @@ public class Grid {
         if (col == 0) allowedMovements.remove("left");
         return allowedMovements;
     }
+
+    private static int getRandomNumberInRange(int min, int max) {
+
+        if (min >= max) {
+            throw new IllegalArgumentException("max must be greater than min");
+        }
+
+        Random r = new Random();
+        return r.nextInt((max - min) + 1) + min;
+    }
+
+    public ArrayList<String> getRandomAllowedMovement(){
+        ArrayList<String> allowedMovements = getActorAllowedMovement();
+        Collections.shuffle(allowedMovements);
+        System.out.println(allowedMovements);
+        System.out.println(getActorAllowedMovement());
+        return getRandomAllowedMovement() ;
+
+    }
     // returns an array with the position of the searched element
+
+    public String getGridUniqueID(){
+        String ID = "";
+        ID = ID + getElementPosition("A")[0]+getElementPosition("A")[1]+"A";
+        ID = ID + getElementPosition("B")[0]+getElementPosition("B")[1]+"B";
+        ID = ID + getElementPosition("C")[0]+getElementPosition("C")[1]+"C";
+        ID = ID + getActorPosition()[0]+getActorPosition()[1]+actor;
+        return ID;
+    }
 
     public int[] getActorPosition(){
         for (int i = 0; i<4; i++){

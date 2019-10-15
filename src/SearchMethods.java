@@ -3,7 +3,8 @@ import java.util.*;
 public class SearchMethods {
     private Grid root;
     private Grid currentNode;
-    int nodesExpanded = 0;
+    private int nodesExpanded = 0;
+    public int nodesGenerated = 0;
 
     public SearchMethods(Grid root){
         this.root = root;
@@ -11,19 +12,44 @@ public class SearchMethods {
     }
 
 
-    public ArrayList<Grid> bfs(){
+    public ArrayList<Grid> dfs(){
+        ArrayList<Grid> exploredNodes = new ArrayList<>();
+        Stack<Grid> fringe = new Stack<>();
+        fringe.add(root);
+        while (!fringe.isEmpty()){
+            currentNode = fringe.pop();
+            if (isGoalState()){
+//                System.out.println(nodesExpanded + " total number of nodes expanded");
+//                System.out.println(nodesGenerated + " total number of nodes generated");
+                return getPathToRoot(currentNode);
+            }else {
+                ArrayList<Grid> children = expandNode(currentNode,true);
+                fringe.addAll(children);
+            }
+        }
+        return null;
+    }
 
+    public ArrayList<Grid> bfs(){
         Queue<Grid> fringe = new ArrayDeque<>();
+        ArrayList<String> exploredNodes = new ArrayList<>();
         fringe.add(root);
         while (!fringe.isEmpty()){
             currentNode = fringe.remove();
             if (isGoalState()){
                 System.out.println(nodesExpanded + " total number of nodes expanded");
+                System.out.println(nodesGenerated + " total number of nodes generated");
                 return getPathToRoot(currentNode);
             }
             else {
-                ArrayList<Grid> children = expandNode(currentNode);
-                children.forEach(node-> fringe.add(node));
+//                exploredNodes.add(currentNode.getGridUniqueID());
+                ArrayList<Grid> children = expandNode(currentNode,false);
+//                children.forEach(child->{
+//                    if (!exploredNodes.contains(child.getGridUniqueID())){
+//                        fringe.add(child);
+//                    }
+//                });
+                fringe.addAll(children);
             }
         }
         return null;
@@ -45,17 +71,20 @@ public class SearchMethods {
         return false;
     }
 
-    public ArrayList<Grid> expandNode(Grid node){
+    public ArrayList<Grid> expandNode(Grid node, boolean randomMovementOrder){
         ArrayList<String> allowedMovements = node.getActorAllowedMovement();
         ArrayList<Grid> children = new ArrayList<>();
         Grid generatedNode;
+        if (randomMovementOrder) Collections.shuffle(allowedMovements);
         nodesExpanded++;
         for (String movement: allowedMovements) {
+            nodesGenerated++;
             //generates a new node similar to parent, adds parent to parent property
             generatedNode = new Grid(node.getNewGrid(),node.actor);
             generatedNode.move=movement;
             int[] actorPosition = generatedNode.getActorPosition();
             generatedNode.parent = node;
+            node.children.add(generatedNode);
             generatedNode.depth = node.depth+1;
             switch (movement){
                 case "left":

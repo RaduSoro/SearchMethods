@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Main {
     private static String actor = "•";
@@ -14,7 +16,7 @@ public class Main {
     public static Grid gridStart = new Grid(startState,actor);
     public static Grid gridFinish = new Grid(goalState,actor);
     public static Grid gridTest = new Grid(testState,actor);
-    public static SearchMethods sm = new SearchMethods(gridStart);
+    public static SearchMethods sm;
 
     public static void main(String args[])
     {
@@ -27,15 +29,37 @@ public class Main {
 //            System.out.println(sm.isGoalState());
 //
 //        });
-        ArrayList<Grid> path = sm.bfs();
-        ArrayList<String> sequence = new ArrayList<>();
-        path.forEach(node ->{
-            System.out.println(node.depth + " Depth of the below this node \n");
-            sequence.add(node.move);
-            System.out.println(node.move.toUpperCase() + " was the move made to get to this state \n");
-            node.printGrid();
-            System.out.println();
-        });
-        System.out.println(sequence);
+        ArrayList<Integer> nodesGenerated = new ArrayList<>();
+        for (int i=0; i<= 300; i++){
+            sm = new SearchMethods(gridStart);
+            ArrayList<Grid> path = sm.dfs();
+            nodesGenerated.add(sm.nodesGenerated);
+            System.out.println(i);
+            path =null;
+            sm = null;
+        }
+        System.out.println(calculateAverage(nodesGenerated));
+        Collections.sort(nodesGenerated);
+        System.out.println("Smallest value "+ nodesGenerated.get(0));
+        System.out.println("Biggest value "+ nodesGenerated.get(300));
+
+//        path.forEach(node ->{
+//            System.out.println(node.depth + " Depth of the below this node \n");
+//            sequence.add(node.move);
+//            System.out.println(node.move.toUpperCase() + " was the move made to get to this state \n");
+//            node.printGrid();
+//            System.out.println();
+//        });
+//        System.out.println(sequence);
+    }
+    private static double calculateAverage(List<Integer> marks) {
+        Integer sum = 0;
+        if(!marks.isEmpty()) {
+            for (Integer mark : marks) {
+                sum += mark;
+            }
+            return sum.doubleValue() / marks.size();
+        }
+        return sum;
     }
 }

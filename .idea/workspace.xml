@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b8f77c6-64c4-4e71-8a58-3848aad3d9d5" name="Default Changelist" comment="Node geneartion">
+    <list default="true" id="4b8f77c6-64c4-4e71-8a58-3848aad3d9d5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Observations.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SearchStuff/BreadthSearch.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SearchStuff/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SearchStuff/Grid.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SearchStuff/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SearchStuff/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid.java" afterDir="false" />
@@ -61,7 +61,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="SearchStuff" />
-      <option name="VM_PARAMETERS" value="-Xmx8192m" />
+      <option name="VM_PARAMETERS" value="-Xms256m -Xmx8192m" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -85,7 +85,7 @@
       <workItem from="1570550831425" duration="8834000" />
       <workItem from="1570923044844" duration="6054000" />
       <workItem from="1570993701481" duration="1803000" />
-      <workItem from="1571151788791" duration="6433000" />
+      <workItem from="1571151788791" duration="18387000" />
     </task>
     <task id="LOCAL-00001" summary="goal state reached function">
       <created>1570923443448</created>
@@ -108,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570928445843</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="BFS">
+      <created>1571159403071</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1571159403071</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +138,7 @@
     <MESSAGE value="goal state reached function" />
     <MESSAGE value="Check element position returns null if the element was not found" />
     <MESSAGE value="Node geneartion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Node geneartion" />
+    <MESSAGE value="BFS" />
+    <option name="LAST_COMMIT_MESSAGE" value="BFS" />
   </component>
 </project>
