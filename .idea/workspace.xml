@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b8f77c6-64c4-4e71-8a58-3848aad3d9d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Observations.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SearchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SearchStuff/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SearchStuff/Grid.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SearchStuff/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SearchStuff/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SearchMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchMethods.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +83,8 @@
       <workItem from="1570550831425" duration="8834000" />
       <workItem from="1570923044844" duration="6054000" />
       <workItem from="1570993701481" duration="1803000" />
-      <workItem from="1571151788791" duration="18387000" />
+      <workItem from="1571151788791" duration="18402000" />
+      <workItem from="1571347846560" duration="437000" />
     </task>
     <task id="LOCAL-00001" summary="goal state reached function">
       <created>1570923443448</created>
@@ -115,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571159403071</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="DFS">
+      <created>1571172262036</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1571172262036</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +145,7 @@
     <MESSAGE value="Check element position returns null if the element was not found" />
     <MESSAGE value="Node geneartion" />
     <MESSAGE value="BFS" />
-    <option name="LAST_COMMIT_MESSAGE" value="BFS" />
+    <MESSAGE value="DFS" />
+    <option name="LAST_COMMIT_MESSAGE" value="DFS" />
   </component>
 </project>
