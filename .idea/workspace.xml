@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b8f77c6-64c4-4e71-8a58-3848aad3d9d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SearchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SearchStuff/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SearchStuff/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Observations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Observations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SearchMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchMethods.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +36,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -84,7 +84,7 @@
       <workItem from="1570923044844" duration="6054000" />
       <workItem from="1570993701481" duration="1803000" />
       <workItem from="1571151788791" duration="18402000" />
-      <workItem from="1571347846560" duration="437000" />
+      <workItem from="1571347846560" duration="1793000" />
     </task>
     <task id="LOCAL-00001" summary="goal state reached function">
       <created>1570923443448</created>
@@ -121,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571172262036</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Memory opt">
+      <created>1571348371796</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1571348371796</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +153,7 @@
     <MESSAGE value="Node geneartion" />
     <MESSAGE value="BFS" />
     <MESSAGE value="DFS" />
-    <option name="LAST_COMMIT_MESSAGE" value="DFS" />
+    <MESSAGE value="Memory opt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Memory opt" />
   </component>
 </project>

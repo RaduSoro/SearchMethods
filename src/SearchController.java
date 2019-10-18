@@ -17,19 +17,19 @@ public class SearchController {
     ArrayList<Integer> nodesGenerated = new ArrayList<>();
     public void doDFS(){
      Grid gridStart = new Grid(startState,actor);
-        for (int i=0; i<= 300; i++){
+        for (int i=0; i<= 250; i++){
             sm = new SearchMethods(gridStart);
             ArrayList<Grid> path = sm.dfs();
             nodesGenerated.add(sm.nodesGenerated);
             System.out.println(i);
             path =null;
             sm = null;
-            if (i%10==0) System.gc();
+            if (i%50==0) System.gc();
         }
         System.out.println(calculateAverage(nodesGenerated));
         Collections.sort(nodesGenerated);
         System.out.println("Smallest value "+ nodesGenerated.get(0));
-        System.out.println("Biggest value "+ nodesGenerated.get(300));
+        System.out.println("Biggest value "+ nodesGenerated.get(250));
     }
 
     private double calculateAverage(List<Integer> marks) {

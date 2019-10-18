@@ -11,7 +11,6 @@ public class SearchMethods {
         this.currentNode = root;
     }
 
-
     public ArrayList<Grid> dfs(){
         ArrayList<Grid> exploredNodes = new ArrayList<>();
         Stack<Grid> fringe = new Stack<>();
