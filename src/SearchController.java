@@ -15,6 +15,14 @@ public class SearchController {
 //    };
     public SearchMethods sm;
     ArrayList<Integer> nodesGenerated = new ArrayList<>();
+
+    public void doIterativeDeepening(){
+        Grid gridStart = new Grid(startState,actor);
+        sm = new SearchMethods(gridStart);
+      Grid test = sm.iterativeDeepening();
+        System.out.println(test.depth);
+    }
+
     public void doDFS(){
      Grid gridStart = new Grid(startState,actor);
         for (int i=0; i<= 250; i++){
