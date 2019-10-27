@@ -19,8 +19,11 @@ public class SearchController {
     public void doIterativeDeepening(){
         Grid gridStart = new Grid(startState,actor);
         sm = new SearchMethods(gridStart);
-      Grid test = sm.iterativeDeepening();
-        System.out.println(test.depth);
+        ArrayList<Grid> test = sm.IDS();
+        for (Grid gridS: test) {
+            gridS.printGrid();
+            System.out.println(gridS.depth);
+        }
     }
 
     public void doDFS(){

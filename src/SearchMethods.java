@@ -12,7 +12,7 @@ public class SearchMethods {
     }
 
     public ArrayList<Grid> dfs(){
-        ArrayList<Grid> exploredNodes = new ArrayList<>();
+//        ArrayList<Grid> exploredNodes = new ArrayList<>();
         Stack<Grid> fringe = new Stack<>();
         fringe.add(root);
         while (!fringe.isEmpty()){
@@ -25,6 +25,41 @@ public class SearchMethods {
                 ArrayList<Grid> children = expandNode(currentNode,true);
                 fringe.addAll(children);
             }
+        }
+        return null;
+    }
+
+    public ArrayList<Grid> dls(int depth){
+//        ArrayList<Grid> exploredNodes = new ArrayList<>();
+        Stack<Grid> fringe = new Stack<>();
+        fringe.add(root);
+        while (!fringe.isEmpty() && currentNode.depth<=depth){
+            currentNode = fringe.pop();
+            if (isGoalState()){
+//                System.out.println(nodesExpanded + " total number of nodes expanded");
+//                System.out.println(nodesGenerated + " total number of nodes generated");
+                return getPathToRoot(currentNode);
+            }else if (currentNode.depth<=depth-1){
+                nodesGenerated++;
+                System.out.println(currentNode.depth);
+                System.out.println(nodesGenerated);
+                ArrayList<Grid> children = expandNode(currentNode,false);
+                fringe.addAll(children);
+            }
+        }
+        return null;
+    }
+
+
+    public ArrayList<Grid> IDS(){
+        int depth = 0;
+//        ArrayList<Grid> result = new ArrayList<>();
+        while (depth<=Integer.MAX_VALUE){
+            ArrayList<Grid> nResult = new ArrayList<>();
+            nResult = dls(depth);
+            if (nResult == null){
+                depth ++;
+            }else return nResult;
         }
         return null;
     }
@@ -50,27 +85,6 @@ public class SearchMethods {
 //                });
                 fringe.addAll(children);
             }
-        }
-        return null;
-    }
-
-    public Grid depthLimitedSearch(Grid current, int depth){
-        if (depth == 0 && isGoalState(current)){
-            return currentNode;
-        }
-        if (depth>0){
-            for (Grid child : expandNode(currentNode, false)){
-                Grid found = depthLimitedSearch(child, depth--);
-                if (found!= null) return  found;
-            }
-        }
-        return null;
-    }
-
-    public Grid iterativeDeepening(){
-        for (int depth = 0; depth<= Integer.MAX_VALUE; depth++){
-            Grid found = depthLimitedSearch(root,depth);
-            if (found!= null) return found;
         }
         return null;
     }
