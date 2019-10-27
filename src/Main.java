@@ -11,7 +11,6 @@ public class Main {
 //
 //        });
         SearchController sc = new SearchController();
-        sc.doDFS();
+        sc.doIterativeDeepening();
     }
-
 }

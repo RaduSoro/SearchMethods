@@ -54,6 +54,27 @@ public class SearchMethods {
         return null;
     }
 
+    public Grid depthLimitedSearch(Grid current, int depth){
+        if (depth == 0 && isGoalState(current)){
+            return currentNode;
+        }
+        if (depth>0){
+            for (Grid child : expandNode(currentNode, false)){
+                Grid found = depthLimitedSearch(child, depth--);
+                if (found!= null) return  found;
+            }
+        }
+        return null;
+    }
+
+    public Grid iterativeDeepening(){
+        for (int depth = 0; depth<= Integer.MAX_VALUE; depth++){
+            Grid found = depthLimitedSearch(root,depth);
+            if (found!= null) return found;
+        }
+        return null;
+    }
+
     public ArrayList<Grid> getPathToRoot(Grid node){
         ArrayList<Grid> path = new ArrayList<>();
         path.add(currentNode);
@@ -66,6 +87,12 @@ public class SearchMethods {
 
     public boolean isGoalState(){
         String[][] grid = currentNode.grid;
+        if (grid[1][1].equals("A")&&grid[2][1].equals("B")&&grid[3][1].equals("C")) return true;
+        return false;
+    }
+
+    public boolean isGoalState(Grid state){
+        String[][] grid = state.grid;
         if (grid[1][1].equals("A")&&grid[2][1].equals("B")&&grid[3][1].equals("C")) return true;
         return false;
     }
