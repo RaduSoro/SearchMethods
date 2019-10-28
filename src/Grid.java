@@ -50,11 +50,9 @@ public class Grid {
     }
 
     private static int getRandomNumberInRange(int min, int max) {
-
         if (min >= max) {
             throw new IllegalArgumentException("max must be greater than min");
         }
-
         Random r = new Random();
         return r.nextInt((max - min) + 1) + min;
     }
@@ -62,10 +60,7 @@ public class Grid {
     public ArrayList<String> getRandomAllowedMovement(){
         ArrayList<String> allowedMovements = getActorAllowedMovement();
         Collections.shuffle(allowedMovements);
-        System.out.println(allowedMovements);
-        System.out.println(getActorAllowedMovement());
         return getRandomAllowedMovement() ;
-
     }
     // returns an array with the position of the searched element
 
@@ -83,6 +78,25 @@ public class Grid {
             for (int j = 0; j<4;j++){
                 if (grid[i][j].equals(actor)) return new int[]{i, j};
             }
+        }
+        return null;
+    }
+
+    // |x1-x2|+|y1-y2|
+    public Integer getManhattanDistance(String needle){
+        //IDEAL POSITIONS
+        int[] aIdealPosition = new int[]{1,1};
+        int[] bIdealPosition = new int[]{2,1};
+        int[] cIdealPosition = new int[]{3,1};
+        int[] actualPosition = getElementPosition(needle);
+
+        switch (needle){
+            case "A":
+                return Math.abs(actualPosition[0]-aIdealPosition[0])+ Math.abs(actualPosition[1]-aIdealPosition[1]);
+            case "B":
+                return Math.abs(actualPosition[0]-bIdealPosition[0])+ Math.abs(actualPosition[1]-bIdealPosition[1]);
+            case "C":
+                return Math.abs(actualPosition[0]-cIdealPosition[0])+ Math.abs(actualPosition[1]-cIdealPosition[1]);
         }
         return null;
     }

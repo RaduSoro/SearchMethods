@@ -41,8 +41,8 @@ public class SearchMethods {
                 return getPathToRoot(currentNode);
             }else if (currentNode.depth<=depth-1){
                 nodesGenerated++;
-                System.out.println(currentNode.depth);
-                System.out.println(nodesGenerated);
+//                System.out.println(currentNode.depth);
+//                System.out.println(nodesGenerated);
                 ArrayList<Grid> children = expandNode(currentNode,false);
                 fringe.addAll(children);
             }
@@ -50,16 +50,13 @@ public class SearchMethods {
         return null;
     }
 
-
-    public ArrayList<Grid> IDS(){
+    public ArrayList<Grid> IDS(int MaxDepth){
         int depth = 0;
-//        ArrayList<Grid> result = new ArrayList<>();
-        while (depth<=Integer.MAX_VALUE){
-            ArrayList<Grid> nResult = new ArrayList<>();
-            nResult = dls(depth);
-            if (nResult == null){
-                depth ++;
-            }else return nResult;
+        ArrayList<Grid> result;
+        while (depth<MaxDepth){
+            result = dls(depth);
+            if (result == null) depth ++;
+            else return result;
         }
         return null;
     }
