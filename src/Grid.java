@@ -87,6 +87,7 @@ public class Grid {
     public void getManhattanScore(){
         String[] letters = {"A","B","C"};
         for(String letter:letters) this.manhattanScore += getManhattanDistance(letter);
+        this.manhattanScore += this.depth;
     }
 
     // |x1-x2|+|y1-y2|

@@ -61,6 +61,32 @@ public class SearchMethods {
         return null;
     }
 
+    public ArrayList<Grid> aStarSeach(){
+        PriorityQueue<Grid> fringe = new PriorityQueue<Grid>(new GridComparator());
+        ArrayList<String> exploredNodes = new ArrayList<>();
+        root.getManhattanScore();
+        fringe.add(root);
+        while (!fringe.isEmpty()) {
+            currentNode = fringe.remove();
+            if (isGoalState()){
+                System.out.println(nodesExpanded + " total number of nodes expanded");
+                System.out.println(nodesGenerated + " total number of nodes generated");
+                return getPathToRoot(currentNode);
+            }
+            else {
+                exploredNodes.add(currentNode.getGridUniqueID());
+                ArrayList<Grid> children = expandNode(currentNode,false);
+                children.forEach(child->{
+                    if (!exploredNodes.contains(child.getGridUniqueID())){
+                        fringe.add(child);
+                    }
+                });
+//                fringe.addAll(children);
+            }
+        }
+        return null;
+    }
+
     public ArrayList<Grid> bfs(){
         Queue<Grid> fringe = new ArrayDeque<>();
         ArrayList<String> exploredNodes = new ArrayList<>();
@@ -145,5 +171,13 @@ public class SearchMethods {
             children.add(generatedNode);
         }
         return children;
+    }
+}
+
+class GridComparator implements Comparator<Grid>{
+    public int compare(Grid g1, Grid g2){
+        if (g1.manhattanScore>g2.manhattanScore) return 1;
+        else if (g1.manhattanScore<g2.manhattanScore) return -1;
+        else return 0;
     }
 }

@@ -11,6 +11,6 @@ public class Main {
 //
 //        });
         SearchController sc = new SearchController();
-        sc.doIterativeDeepening();
+        sc.doAStar();
     }
 }
