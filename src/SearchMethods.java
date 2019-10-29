@@ -141,6 +141,7 @@ public class SearchMethods {
                     generatedNode.swapPositions(actorPosition);
                 break;
             }
+            generatedNode.getManhattanScore();
             children.add(generatedNode);
         }
         return children;

@@ -9,6 +9,7 @@ public class Grid {
     public String[][] grid;
     public String actor;
     public int depth;
+    public int manhattanScore;
     public String move;
     public ArrayList<Grid> children;
     public Grid(String[][] grid, String actor){
@@ -16,6 +17,7 @@ public class Grid {
         this.grid = grid;
         this.actor = actor;
         depth = 0;
+        manhattanScore = 0;
         move = "";
         children = new ArrayList<>();
     }
@@ -80,6 +82,11 @@ public class Grid {
             }
         }
         return null;
+    }
+
+    public void getManhattanScore(){
+        String[] letters = {"A","B","C"};
+        for(String letter:letters) this.manhattanScore += getManhattanDistance(letter);
     }
 
     // |x1-x2|+|y1-y2|

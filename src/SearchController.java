@@ -20,9 +20,17 @@ public class SearchController {
         sm = new SearchMethods(gridStart);
         ArrayList<Grid> test = sm.IDS(20);
         for (Grid gridS: test) {
+            System.out.println(gridS.manhattanScore);
             gridS.printGrid();
-            System.out.println(gridS.depth);
+//            System.out.println(gridS.depth);
         }
+        Grid lastGrid = test.get(0);
+        System.out.println(lastGrid.getManhattanDistance("A")+"   A");
+        System.out.println(lastGrid.getManhattanDistance("B")+"   B");
+        System.out.println(lastGrid.getManhattanDistance("C")+"   C");
+        System.out.println(lastGrid.manhattanScore+"   GRID");
+        //TODO add manhattan disance on root.
+//        System.out.println(lastGrid.getManhattanScore()+"   GRID");
     }
 
     public void doDFS(){
