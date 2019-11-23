@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4b8f77c6-64c4-4e71-8a58-3848aad3d9d5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SearchStuff/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SearchStuff/Grid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SearchStuff/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SearchStuff/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SearchMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchMethods.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +100,11 @@
       <workItem from="1571347846560" duration="1793000" />
       <workItem from="1571401912750" duration="2074000" />
       <workItem from="1572221797158" duration="4044000" />
-      <workItem from="1572347859220" duration="2204000" />
+      <workItem from="1572347859220" duration="3491000" />
+      <workItem from="1572370773959" duration="5273000" />
+      <workItem from="1572463740480" duration="149000" />
+      <workItem from="1573294614317" duration="883000" />
+      <workItem from="1574515509139" duration="267000" />
     </task>
     <task id="LOCAL-00001" summary="goal state reached function">
       <created>1570923443448</created>
@@ -159,7 +162,28 @@
       <option name="project" value="LOCAL" />
       <updated>1572225192948</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Manhattan Distance">
+      <created>1572351911341</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1572351911341</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Manhattan Distance">
+      <created>1572351970679</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1572351970679</updated>
+    </task>
+    <task id="LOCAL-00011" summary="A*">
+      <created>1572390130204</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1572390130204</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +224,19 @@
     <MESSAGE value="DFS" />
     <MESSAGE value="Memory opt" />
     <MESSAGE value="IDS SEARCH" />
-    <option name="LAST_COMMIT_MESSAGE" value="IDS SEARCH" />
+    <MESSAGE value="Manhattan Distance" />
+    <MESSAGE value="A*" />
+    <option name="LAST_COMMIT_MESSAGE" value="A*" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SearchMethods.java</url>
+          <line>169</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
