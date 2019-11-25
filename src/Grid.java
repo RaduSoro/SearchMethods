@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Random;
 
 public class Grid {
 
@@ -9,16 +7,16 @@ public class Grid {
     public String[][] grid;
     public String actor;
     public int depth;
-    public int manhattanScore;
-    public String move;
+    public int heuristicScore;
+    public String generatedByMovement;
     public ArrayList<Grid> children;
     public Grid(String[][] grid, String actor){
         this.parent = null;
         this.grid = grid;
         this.actor = actor;
         depth = 0;
-        manhattanScore = 0;
-        move = "";
+        heuristicScore = 0;
+        generatedByMovement = "";
         children = new ArrayList<>();
     }
 
@@ -41,7 +39,7 @@ public class Grid {
 
     public ArrayList<String> getActorAllowedMovement(){
         int[] position = getElementPosition(actor);
-        ArrayList<String> allowedMovements = new ArrayList<>(Arrays.asList("left","right","up","down"));
+        ArrayList<String> allowedMovements = new ArrayList<>(Arrays.asList("right","left","up","down"));
         int row = position[0];
         int col = position[1];
         if (row == 3) allowedMovements.remove("down");
@@ -50,21 +48,6 @@ public class Grid {
         if (col == 0) allowedMovements.remove("left");
         return allowedMovements;
     }
-
-    private static int getRandomNumberInRange(int min, int max) {
-        if (min >= max) {
-            throw new IllegalArgumentException("max must be greater than min");
-        }
-        Random r = new Random();
-        return r.nextInt((max - min) + 1) + min;
-    }
-
-    public ArrayList<String> getRandomAllowedMovement(){
-        ArrayList<String> allowedMovements = getActorAllowedMovement();
-        Collections.shuffle(allowedMovements);
-        return getRandomAllowedMovement() ;
-    }
-    // returns an array with the position of the searched element
 
     public String getGridUniqueID(){
         String ID = "";
@@ -86,8 +69,8 @@ public class Grid {
 
     public void getManhattanScore(){
         String[] letters = {"A","B","C"};
-        for(String letter:letters) this.manhattanScore += getManhattanDistance(letter);
-        this.manhattanScore += this.depth;
+        for(String letter:letters) this.heuristicScore += getManhattanDistance(letter);
+        this.heuristicScore += this.depth;
     }
 
     // |x1-x2|+|y1-y2|
