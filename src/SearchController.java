@@ -53,7 +53,7 @@ public class SearchController {
 
     public void doDFS(){
      Grid gridStart = new Grid(startState,actor);
-        for (int i=0; i<= 250; i++){
+        for (int i=0; i<= 0; i++){
             sm = new SearchMethods(gridStart);
             ArrayList<Grid> path = sm.dfs();
             nodesGenerated.add(sm.nodesGenerated);

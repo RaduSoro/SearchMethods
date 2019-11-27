@@ -7,7 +7,7 @@ public class Grid {
     public String[][] grid;
     public String actor;
     public int depth;
-    public int heuristicScore;
+    public double heuristicScore;
     public String generatedByMovement;
     public ArrayList<Grid> children;
     public Grid(String[][] grid, String actor){
@@ -70,6 +70,7 @@ public class Grid {
     public void getManhattanScore(){
         String[] letters = {"A","B","C"};
         for(String letter:letters) this.heuristicScore += getManhattanDistance(letter);
+        this.heuristicScore = this.heuristicScore*2.5;
         this.heuristicScore += this.depth;
     }
 

@@ -70,9 +70,6 @@ public class SearchMethods {
         ArrayList<String> exploredNodes = new ArrayList<>();
         root.getManhattanScore();
         fringe.add(root);
-        System.out.println("Parent");
-        root.printGrid();
-        System.out.println();
         while (!fringe.isEmpty()) {
             currentNode = fringe.remove();
             if (isGoalState()){
@@ -84,9 +81,9 @@ public class SearchMethods {
                 exploredNodes.add(currentNode.getGridUniqueID());
                 ArrayList<Grid> children = expandNode(currentNode,false);
                 children.forEach(child->{
-//                    if (!exploredNodes.contains(child.getGridUniqueID())){
+                    if (!exploredNodes.contains(child.getGridUniqueID())){
                         fringe.add(child);
-//                    }
+                    }
                 });
 //                fringe.addAll(children);
             }
@@ -100,22 +97,19 @@ public class SearchMethods {
         fringe.add(root);
         while (!fringe.isEmpty()){
             currentNode = fringe.remove();
-            if (currentDepth!=currentNode.depth){
-                System.out.println("Depth: " + currentDepth);
-                System.out.println("Nodes expanded: " + nodesExpanded);
-                System.out.println("Nodes generated : " + nodesGenerated);
-                currentDepth = currentNode.depth;
-            }
             if (isGoalState()){
-                System.out.println("Depth: " + currentNode.depth);
                 System.out.println(nodesExpanded + " total number of nodes expanded");
                 System.out.println(nodesGenerated + " total number of nodes generated");
                 return getPathToRoot(currentNode);
             }
             else {
-//                exploredNodes.add(currentNode.getGridUniqueID());
+                exploredNodes.add(currentNode.getGridUniqueID());
                 ArrayList<Grid> children = expandNode(currentNode,false);
-                fringe.addAll(children);
+                children.forEach(child -> {
+                    if (!exploredNodes.contains(child.getGridUniqueID())){
+                        fringe.add(child);
+                    }
+                });
             }
         }
         return null;

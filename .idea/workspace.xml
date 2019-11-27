@@ -110,7 +110,7 @@
       <workItem from="1573294614317" duration="883000" />
       <workItem from="1574515509139" duration="13464000" />
       <workItem from="1574538371591" duration="5165000" />
-      <workItem from="1574679141850" duration="3998000" />
+      <workItem from="1574679141850" duration="10315000" />
     </task>
     <task id="LOCAL-00001" summary="goal state reached function">
       <created>1570923443448</created>
@@ -196,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574515809777</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="IDK">
+      <created>1574683592861</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1574683592861</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +247,7 @@
     <MESSAGE value="Manhattan Distance" />
     <MESSAGE value="A*" />
     <MESSAGE value="Final version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final version" />
+    <MESSAGE value="IDK" />
+    <option name="LAST_COMMIT_MESSAGE" value="IDK" />
   </component>
 </project>
