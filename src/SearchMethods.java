@@ -14,7 +14,6 @@ public class SearchMethods {
     }
 
     public ArrayList<Grid> dfs(){
-//        ArrayList<Grid> exploredNodes = new ArrayList<>();
         Stack<Grid> fringe = new Stack<>();
         fringe.add(root);
         while (!fringe.isEmpty()){
@@ -44,8 +43,6 @@ public class SearchMethods {
                 return getPathToRoot(currentNode);
             }else if (currentNode.depth<=depth-1){
                 nodesGenerated++;
-//                System.out.println(currentNode.depth);
-//                System.out.println(nodesGenerated);
                 ArrayList<Grid> children = expandNode(currentNode,false);
                 fringe.addAll(children);
             }
@@ -85,7 +82,6 @@ public class SearchMethods {
                         fringe.add(child);
                     }
                 });
-//                fringe.addAll(children);
             }
         }
         return null;

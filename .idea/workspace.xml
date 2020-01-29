@@ -4,8 +4,6 @@
     <list default="true" id="4b8f77c6-64c4-4e71-8a58-3848aad3d9d5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SearchStuff/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SearchStuff/Grid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SearchStuff/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SearchStuff/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SearchMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchMethods.java" afterDir="false" />
@@ -15,6 +13,12 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="printScope" value="4" />
+    <option name="PRINT_LINE_NUMBERS" value="true" />
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../SearchStuff\exportToHTML" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -43,7 +47,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -111,6 +115,12 @@
       <workItem from="1574515509139" duration="13464000" />
       <workItem from="1574538371591" duration="5165000" />
       <workItem from="1574679141850" duration="10315000" />
+      <workItem from="1574862905596" duration="1070000" />
+      <workItem from="1574872349573" duration="419000" />
+      <workItem from="1574880287297" duration="746000" />
+      <workItem from="1574881052831" duration="383000" />
+      <workItem from="1574881744186" duration="668000" />
+      <workItem from="1574937460303" duration="172000" />
     </task>
     <task id="LOCAL-00001" summary="goal state reached function">
       <created>1570923443448</created>
@@ -203,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574683592861</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Presentation ready">
+      <created>1574862926969</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1574862926969</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,6 +265,7 @@
     <MESSAGE value="A*" />
     <MESSAGE value="Final version" />
     <MESSAGE value="IDK" />
-    <option name="LAST_COMMIT_MESSAGE" value="IDK" />
+    <MESSAGE value="Presentation ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="Presentation ready" />
   </component>
 </project>

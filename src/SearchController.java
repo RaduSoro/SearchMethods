@@ -19,36 +19,24 @@ public class SearchController {
         Grid gridStart = new Grid(startState,actor);
         sm = new SearchMethods(gridStart);
         ArrayList<Grid> result = sm.IDS(20);
-        Grid lastGrid = result.get(0);
         result.forEach(grid -> {
             System.out.println();
             grid.printGrid();
             System.out.println(grid.generatedByMovement);
         });
-//        System.out.println(lastGrid.getManhattanScore()+"   GRID");
     }
 
     public void doAStar(){
         Grid gridStart = new Grid(startState,actor);
         sm = new SearchMethods(gridStart);
-        ArrayList<Grid> test = sm.aStarSeach();
-//        Grid lastGrid = test.get(0);
-//        System.out.println(lastGrid.getManhattanDistance("A")+"   A");
-//        System.out.println(lastGrid.getManhattanDistance("B")+"   B");
-//        System.out.println(lastGrid.getManhattanDistance("C")+"   C");
-//        System.out.println(lastGrid.manhattanScore+"   GRID");
-//        System.out.println(lastGrid.getManhattanScore()+"   GRID");
+        ArrayList<Grid> result = sm.aStarSeach();
+        result.forEach(Grid::printGrid);
     }
     public void doBFS(){
         Grid gridStart = new Grid(startState,actor);
         sm = new SearchMethods(gridStart);
-        ArrayList<Grid> test = sm.bfs();
-//        Grid lastGrid = test.get(0);
-//        System.out.println(lastGrid.getManhattanDistance("A")+"   A");
-//        System.out.println(lastGrid.getManhattanDistance("B")+"   B");
-//        System.out.println(lastGrid.getManhattanDistance("C")+"   C");
-//        System.out.println(lastGrid.manhattanScore+"   GRID");
-//        System.out.println(lastGrid.getManhattanScore()+"   GRID");
+        ArrayList<Grid> result = sm.bfs();
+        result.forEach(Grid::printGrid);
     }
 
     public void doDFS(){
